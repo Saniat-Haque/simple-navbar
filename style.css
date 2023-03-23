@@ -1,0 +1,126 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Open Sans',sans-serif;
+}
+body{
+    background-color:black;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition:  0.2s ease;
+}
+a:hover{
+    color: orangered;
+    
+}
+
+
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+.toggle-button{
+    font-size:1.5rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+    
+}
+.action-button{
+    background-color: orangered;
+    
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2s ease;
+}
+.action-button:hover{
+    color: white;
+    scale: 1.05;
+}
+.action-button:active{
+    scale: 0.95;
+}
+
+
+
+.dropdown{
+    display:none;
+    position:absolute;
+    right:2rem;
+    top:60px;
+    height: 0;
+    width:200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+}
+
+.dropdown.open{
+    height: 240px;
+}
+
+.dropdown li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown .action-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media(max-width:801px){
+    
+    .navbar .links,
+    .navbar .action-button
+    {
+        display: none;
+    }
+    .navbar .toggle-button{
+        display: block;
+    }
+    .dropdown{
+        display: block;
+    }
+}
+@media(max-width:391px){
+    .dropdown{
+        left:2rem;
+        width:unset;
+    }
+}
